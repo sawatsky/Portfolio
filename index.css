@@ -1,0 +1,117 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 200px;
+	
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+/**************************************************************
+							VCard
+**************************************************************/
+#vcard {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+#portrait {
+	width: 150px;
+	height: 150px;
+	border-radius: 150px 150px;
+	margin: 10px;
+	margin-right: 25px;
+	
+	border: solid #262626 1px;
+}
+
+#vcard > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#name, #profession {
+	margin: 5px 0;
+	letter-spacing: 1.5px;
+}
+
+#name {
+	font-size: 26px;
+	font-weight: bold;
+	color: #262626;
+}
+
+#profession {
+	font-size: 20px;
+	color: #919191;
+}
+
+
+/**************************************************************
+							Menu Icon
+**************************************************************/
+#menu-icon {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 20px;
+	width: 32px;
+	cursor: pointer;
+}
+
+
+/**************************************************************
+							Menu
+**************************************************************/
+#more-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 250px;
+	
+	background-color: #ededed;
+}
+
+#more-info > div > span {
+
+}
+
+#my-content, #my-profiles {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 35px;
+}
+
+#my-content {
+	font-size: 19px;
+	
+	color: #262626;
+}
+
+#my-content > span {
+	margin-bottom: 20px;
+}
+
+#my-profiles {
+	font-size: 17px;
+	
+	color: #919191;
+}
+
+#my-profiles > span {
+	margin-top: 20px;
+}
+
+#my-profiles > hr {
+	width: 50%;
+}
