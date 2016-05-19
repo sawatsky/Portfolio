@@ -83,6 +83,14 @@ body {
 	background-color: #ededed;
 }
 
+#more-info .link {
+	cursor: pointer;
+}
+
+#more-info .header {
+	cursor: default;
+}
+
 #more-info > div > span {
 	padding: 10px 10px 10px 35px;
 }
@@ -107,7 +115,8 @@ body {
 }
 
 #my-profiles > hr {
-	width: 50%;
+	margin: 10px 10px 10px 35px;
+	width: 35px;
 }
 
 #more-info .selected {
@@ -116,12 +125,4 @@ body {
 	font-weight: bold;
 	
 	background-color: #ffffff;
-}
-
-#more-info .link {
-	cursor: pointer;
-}
-
-#more-info .header {
-	cursor: default;
 }
