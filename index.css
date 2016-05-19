@@ -59,6 +59,8 @@ body {
 							Menu Icon
 **************************************************************/
 #menu-icon {
+	display: none;
+	
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -82,14 +84,14 @@ body {
 }
 
 #more-info > div > span {
-
+	padding: 10px 10px 10px 35px;
 }
 
 #my-content, #my-profiles {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin: 35px;
+	margin: 35px 35px 35px 0;
 }
 
 #my-content {
@@ -98,20 +100,28 @@ body {
 	color: #262626;
 }
 
-#my-content > span {
-	margin-bottom: 20px;
-}
-
 #my-profiles {
 	font-size: 17px;
 	
 	color: #919191;
 }
 
-#my-profiles > span {
-	margin-top: 20px;
-}
-
 #my-profiles > hr {
 	width: 50%;
+}
+
+#more-info .selected {
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	font-weight: bold;
+	
+	background-color: #ffffff;
+}
+
+#more-info .link {
+	cursor: pointer;
+}
+
+#more-info .header {
+	cursor: default;
 }
