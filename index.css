@@ -7,7 +7,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 200px;
+	min-height: 400px;
 	
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
@@ -67,6 +67,10 @@ body {
 	cursor: pointer;
 }
 
+#menu-icon.hidden, #close-icon.hidden {
+	display: none;
+}
+
 
 /**************************************************************
 							Menu
@@ -79,19 +83,15 @@ body {
 	height: 100%;
 	width: 250px;
 	
+	transition: width 0.5s;
+	
 	background-color: #ededed;
-}
-
-#more-info .link {
-	cursor: pointer;
-}
-
-#more-info .header {
-	cursor: default;
 }
 
 #more-info > div > span {
 	padding: 10px 10px 10px 35px;
+	white-space: nowrap;
+	cursor: pointer;
 }
 
 #my-content, #my-profiles {
@@ -99,26 +99,25 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	margin: 35px 35px 35px 0;
+	overflow: hidden;
 }
 
 #my-content {
+	min-width: 215px;
+	min-height: 175px;
 	font-size: 19px;
 	
 	color: #262626;
 }
 
 #my-profiles {
+	min-height: 75px;
 	font-size: 17px;
 	
 	color: #919191;
 }
 
-#my-profiles > hr {
-	margin: 10px 10px 10px 35px;
-	width: 35px;
-}
-
-#more-info .selected {
+#my-content .selected {
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 	font-weight: bold;
@@ -126,10 +125,6 @@ body {
 	background-color: #ffffff;
 }
 
-
-/**************************************************************
-							General
-**************************************************************/
-.hidden {
-	display: none;
+#more-info.hidden {
+	width: 0;
 }
