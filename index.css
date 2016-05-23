@@ -44,7 +44,7 @@ body {
 	cursor: default;
 }
 
-#name, #profession, #tag {
+#name, #profession, #tag, #tag2 {
 	margin: 5px 0;
 	letter-spacing: 1.5px;
 }
@@ -63,7 +63,12 @@ body {
 #tag {
 	font-size: 20px;
 	color: #9c00cc;
-	font-weight: bold;
+}
+
+#tag2 {
+	font-size: 18px;
+	color: #9c00cc;
+	letter-spacing: 0.5px;
 }
 
 
