@@ -44,7 +44,7 @@ body {
 	cursor: default;
 }
 
-#name, #profession, #tag, #tag2 {
+#name, #profession, #email, #phone {
 	margin: 5px 0;
 	letter-spacing: 1.5px;
 }
@@ -60,12 +60,12 @@ body {
 	color: #919191;
 }
 
-#tag {
+#email {
 	font-size: 20px;
 	color: #9c00cc;
 }
 
-#tag2 {
+#phone {
 	font-size: 18px;
 	color: #9c00cc;
 	letter-spacing: 0.5px;
