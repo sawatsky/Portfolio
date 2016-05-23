@@ -25,7 +25,7 @@ body {
 }
 
 #vcard:hover {
-	background: radial-gradient(rgba(244, 240, 184, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+	background: radial-gradient(rgba(247, 233, 252, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
 #portrait {
@@ -44,7 +44,7 @@ body {
 	cursor: default;
 }
 
-#name, #profession {
+#name, #profession, #tag {
 	margin: 5px 0;
 	letter-spacing: 1.5px;
 }
@@ -58,6 +58,12 @@ body {
 #profession {
 	font-size: 20px;
 	color: #919191;
+}
+
+#tag {
+	font-size: 20px;
+	color: #9c00cc;
+	font-weight: bold;
 }
 
 
