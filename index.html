@@ -13,7 +13,7 @@
 	</head>
 	
 	<body>
-		<div id="vcard">
+		<div id="vcard" class="header">
 			<img id="portrait" src="images/me.jpg"/>
 			<div>
 				<span id="name">Heather Sawatsky</span>
@@ -23,15 +23,19 @@
 			</div>
 		</div>
 		
+		<div id="about-me">
+			
+		</div>
+		
 		<div id="more-info" class="hidden">
 			<img id="menu-icon" src="images/menu-icon.png"/>
 			<img id="close-icon" class="hidden" src="images/close-icon.png"/>
 			
 			<div id="my-content">
-				<span id="home" class="selected">Home</span>
-				<span id="about-me">About Me</span>
-				<span id="examples">Examples</span>
-				<span id="references">References</span>
+				<span class="selected">Home</span>
+				<span onclick="window.location.hash = '#about-me'">About Me</span>
+				<span>Examples</span>
+				<span>References</span>
 					<!-- Flexbox, Stack Overflow -->
 			</div>
 			
