@@ -8,4 +8,5 @@
 	- Style changes to VCard
 
 <b>v0.0.2 - Coming Soon!</b>
+	- 
 </pre>
