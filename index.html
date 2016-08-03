@@ -13,36 +13,42 @@
 	</head>
 	
 	<body>
-		<div id="vcard" class="header">
-			<img id="portrait" src="images/me.jpg"/>
-			<div>
-				<span id="name">Heather Sawatsky</span>
-				<span id="profession">Software Developer</span>
-				<span id="email">heather.sawatsky@icloud.com</span>
-				<span id="phone">425-326-2436</span>
+		<div class="body-content">
+			<div class="vcard">
+				<img class="vcard-portrait" src="images/me.jpg"/>
+				<div>
+					<span class="vcard-name">Heather Sawatsky</span>
+					<span class="vcard-profession">Software Developer</span>
+					<span class="vcard-email">heather.sawatsky@icloud.com</span>
+					<span class="vcard-phone">425-326-2436</span>
+				</div>
+			</div>
+
+			<div class="section-content">
+				<div class="about-me">
+					testing
+				</div>
 			</div>
 		</div>
 		
-		<div id="about-me">
+		<div class="menu hidden">
+			<img class="menu-icon" src="images/menu-icon.png"/>
+			<img class="close-icon" src="images/close-icon.png"/>
 			
-		</div>
-		
-		<div id="more-info" class="hidden">
-			<img id="menu-icon" src="images/menu-icon.png"/>
-			<img id="close-icon" class="hidden" src="images/close-icon.png"/>
-			
-			<div id="my-content">
-				<span class="selected">Home</span>
-				<span onclick="window.location.hash = '#about-me'">About Me</span>
+			<div class="my-content">
+				<span location="#">Home</span>
+				<span location="#about-me">About Me</span>
 				<span>Examples</span>
 				<span>References</span>
 					<!-- Flexbox, Stack Overflow -->
 			</div>
 			
-			<div id="my-profiles">
-				<span id="linkedin">linkedin</span>
-				<span id="github">github</span>
+			<div class="my-profiles">
+				<span class="linkedin">linkedin</span>
+				<span class="github">github</span>
 			</div>
 		</div>
+
+		<script src="script.js"></script>
 	</body>
 </html>

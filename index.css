@@ -5,8 +5,6 @@ html, body {
 
 body {
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	min-height: 400px;
 	-webkit-user-select: none;
 	
@@ -15,24 +13,67 @@ body {
 
 
 /**************************************************************
+						Body Content
+**************************************************************/
+.body-content {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.body-content > * {
+	transition: all 1s;
+}
+
+.body-content .section-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.body-content .section-content > *.selected {
+	flex-grow: 1;
+}
+
+.body-content .section-content > *:not(.selected) {
+	flex-grow: 0;
+}
+
+.body-content:not(.expanded) .section-content {
+	height: 0;
+	overflow: hidden;
+}
+
+.body-content.expanded .section-content {
+	height: inherit;
+	overflow: visible;
+}
+
+.body-content:not(.expanded) .vcard,
+.body-content.expanded .section-content {
+	flex-grow: 1;
+}
+
+.body-content:not(.expanded) .section-content,
+.body-content.expanded .vcard {
+	flex-grow: 0;
+}
+
+
+
+/**************************************************************
 							VCard
 **************************************************************/
-#vcard {
+.vcard {
 	display: flex;
-	flex-grow: 1;
 	align-items: center;
 	justify-content: center;
 }
 
-#vcard:hover {
+.vcard:hover {
 	background: radial-gradient(rgba(247, 233, 252, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-#vcard.header {
-	align-self: flex-start;
-}
-
-#portrait {
+.vcard .vcard-portrait {
 	width: 150px;
 	height: 150px;
 	border-radius: 150px 150px;
@@ -42,61 +83,58 @@ body {
 	border: solid #262626 1px;
 }
 
-#vcard > div {
+.vcard > div {
 	display: flex;
 	flex-direction: column;
 	cursor: default;
 }
 
-#name, #profession, #email, #phone {
+.vcard > div > span {
 	margin: 5px 0;
 	letter-spacing: 1.5px;
 }
 
-#name {
+.vcard .vcard-name {
 	font-size: 26px;
 	font-weight: bold;
 	color: #262626;
 }
 
-#profession {
+.vcard .vcard-profession {
 	font-size: 20px;
 	color: #919191;
 }
 
-#email {
+.vcard .vcard-email {
 	font-size: 20px;
 	color: #9c00cc;
 }
 
-#phone {
+.vcard .vcard-phone {
 	font-size: 18px;
 	color: #9c00cc;
 	letter-spacing: 0.5px;
 }
 
 
+
 /**************************************************************
-							Menu Icon
+						  About Me
 **************************************************************/
-#menu-icon, #close-icon {
-	position: absolute;
-	left: -72px;
-	width: 32px;
-	padding: 10px;
-	margin: 5px 10px;
-	cursor: pointer;
+.about-me {
+	flex: 1;
+
+	background-color:red;
 }
 
-#menu-icon.hidden, #close-icon.hidden {
-	display: none;
-}
+
+
 
 
 /**************************************************************
 							Menu
 **************************************************************/
-#more-info {
+.menu {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -105,17 +143,41 @@ body {
 	width: 250px;
 	
 	transition: width 0.5s;
-	
 	background-color: #ededed;
 }
 
-#more-info > div > span {
+.menu.hidden {
+	width: 0;
+}
+
+.menu .menu-icon,
+.menu .close-icon {
+	position: absolute;
+	left: -72px;
+	width: 32px;
+	padding: 10px;
+	margin: 5px 10px;
+	cursor: pointer;
+}
+
+.menu:not(.hidden) .menu-icon,
+.menu.hidden .close-icon {
+	display: none;
+}
+
+.menu.hidden .menu-icon,
+.menu:not(.hidden) .close-icon {
+	display: block;
+}
+
+.menu > div > span {
 	padding: 10px 10px 10px 35px;
 	white-space: nowrap;
 	cursor: pointer;
 }
 
-#my-content, #my-profiles {
+.menu .my-content,
+.menu .my-profiles {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -123,28 +185,24 @@ body {
 	overflow: hidden;
 }
 
-#my-content {
+.menu .my-content {
 	min-height: 175px;
 	font-size: 19px;
 	
 	color: #262626;
 }
 
-#my-profiles {
+.menu .my-profiles {
 	min-height: 75px;
 	font-size: 17px;
 	
 	color: #919191;
 }
 
-#my-content .selected {
+.menu .my-content .selected {
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 	font-weight: bold;
 	
 	background-color: #ffffff;
-}
-
-#more-info.hidden {
-	width: 0;
 }
