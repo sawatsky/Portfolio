@@ -8,10 +8,4 @@
 	- Style changes to VCard
 
 <b>v0.0.2 - Coming Soon!</b>
-<<<<<<< HEAD
-	- 
-	- 
 </pre>
-=======
-</pre>
->>>>>>> parent of a8d23da... ignore
