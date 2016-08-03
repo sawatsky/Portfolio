@@ -7,5 +7,6 @@
 	- Toggling menu open and closed with css
 	- Style changes to VCard
 
-<b>v0.0.2 - Coming Soon!</b>
+<b>v0.0.2 - 2016 Aug 3</b>
+	- Adding basic functionality with menu click
 </pre>

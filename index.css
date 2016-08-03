@@ -30,14 +30,6 @@ body {
 	flex-direction: column;
 }
 
-.body-content .section-content > *.selected {
-	flex-grow: 1;
-}
-
-.body-content .section-content > *:not(.selected) {
-	flex-grow: 0;
-}
-
 .body-content:not(.expanded) .section-content {
 	height: 0;
 	overflow: hidden;
@@ -55,6 +47,14 @@ body {
 
 .body-content:not(.expanded) .section-content,
 .body-content.expanded .vcard {
+	flex-grow: 0;
+}
+
+.body-content .section-content > *.selected {
+	flex-grow: 1;
+}
+
+.body-content .section-content > *:not(.selected) {
 	flex-grow: 0;
 }
 
@@ -122,8 +122,6 @@ body {
 						  About Me
 **************************************************************/
 .about-me {
-	flex: 1;
-
 	background-color:red;
 }
 
@@ -146,7 +144,7 @@ body {
 	background-color: #ededed;
 }
 
-.menu.hidden {
+.menu:not(.expanded) {
 	width: 0;
 }
 
@@ -160,14 +158,14 @@ body {
 	cursor: pointer;
 }
 
-.menu:not(.hidden) .menu-icon,
-.menu.hidden .close-icon {
-	display: none;
+.menu:not(.expanded) .menu-icon,
+.menu.expanded .close-icon {
+	display: block;
 }
 
-.menu.hidden .menu-icon,
-.menu:not(.hidden) .close-icon {
-	display: block;
+.menu.expanded .menu-icon,
+.menu:not(.expanded) .close-icon {
+	display: none;
 }
 
 .menu > div > span {
