@@ -18,7 +18,7 @@
 		}
 
 		// 'Select' menu item
-		var menuItem = document.querySelector(".menu-items > *[location='" + hash +"']");
+		var menuItem = document.querySelector("menu-items > *[location='" + hash +"']");
 		_toggleSelected(menuItem.parentNode, menuItem);
 
 		return onhashchange;
@@ -31,7 +31,7 @@
 	 */
 	document.querySelectorAll(".menu-icon, .close-icon").forEach(function(node) {
 		node.onclick = function() {
-			document.querySelector(".menu").classList.toggle("expanded");
+			document.querySelector("menu").classList.toggle("expanded");
 		}
 	});
 
@@ -39,7 +39,7 @@
 	/*
 	 *	On click of a menu item, change the location.hash
 	 */
-	document.querySelectorAll(".menu-items > *[location]").forEach(function(node) {
+	document.querySelectorAll("menu-items > *[location]").forEach(function(node) {
 		node.onclick = function() {
 			window.location.hash = node.getAttribute("location");
 		}

@@ -14,14 +14,14 @@
 	
 	<body>
 		<div class="body-content">
-			<vcard class="vcard">
+			<vcard>
 				<img class="vcard-portrait" src="images/me.jpg"/>
-				<div>
-					<span class="vcard-name">Heather Sawatsky</span>
-					<span class="vcard-profession">Software Developer</span>
-					<span class="vcard-email">heather.sawatsky@icloud.com</span>
-					<span class="vcard-phone">425-326-2436</span>
-				</div>
+				<vcard-info>
+					<vcard-name>Heather Sawatsky</vcard-name>
+					<vcard-profession>Software Developer</vcard-profession>
+					<vcard-email>heather.sawatsky@icloud.com</vcard-email>
+					<vcard-phone>425-326-2436</vcard-phone>
+				</vcard-info>
 			</vcard>
 
 			<div class="section-content">
@@ -72,22 +72,22 @@
 			</div>
 		</div>
 		
-		<div class="menu">
+		<menu>
 			<img class="menu-icon" src="images/menu-icon.png"/>
 			<img class="close-icon" src="images/close-icon.png"/>
 			
-			<div class="menu-items">
+			<menu-items>
 				<span location="#">Home</span>
 				<span location="#about-me">About Me</span>
 				<span location="#blog">Blog</span>
 				<span location="#references">References</span>
-			</div>
+			</menu-items>
 			
-			<div class="external-links">
-				<a href="https://www.linkedin.com/in/heather-sawatsky-079380120" target="_blank">linkedin</a>
-				<a href="https://github.com/sawatsky" target="_blank">github</a>
-			</div>
-		</div>
+			<external-links>
+				<a class="linkedin" href="https://www.linkedin.com/in/heather-sawatsky-079380120" target="_blank">linkedin</a>
+				<a class="github" href="https://github.com/sawatsky" target="_blank">github</a>
+			</external-links>
+		</menu>
 
 		<script src="script.js"></script>
 	</body>
