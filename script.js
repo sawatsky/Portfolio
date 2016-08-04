@@ -8,17 +8,18 @@
 		// 'Expand' .body-content
 		if (hash == "#") {
 			document.querySelector(".body-content").classList.remove("expanded");
-		} else if (hash == "#about-me") {
+			_toggleSelected(document.querySelector(".section-content"));
+		} else {
+			// 'Select' .section-content
+			var sectionContent = document.querySelector(".section-content > *[content='" + hash + "']");
+			_toggleSelected(sectionContent.parentNode, sectionContent);
+
 			document.querySelector(".body-content").classList.add("expanded");
 		}
 
 		// 'Select' menu item
-		var a = document.querySelector(".my-content > *[location='" + hash +"']");
-		toggleSelected(a.parentNode, a);
-
-		// 'Select' .section-content
-		var b = document.querySelector(".section-content > *:first-child");
-		toggleSelected(b.parentNode, b);
+		var menuItem = document.querySelector(".menu-items > *[location='" + hash +"']");
+		_toggleSelected(menuItem.parentNode, menuItem);
 
 		return onhashchange;
 	})();
@@ -36,13 +37,11 @@
 
 
 	/*
-	 *	On click on a menu item, change the location.hash or location.href
+	 *	On click of a menu item, change the location.hash or location.href
 	 */
-	document.querySelectorAll(".my-content > *[location]").forEach(function(node) {
+	document.querySelectorAll(".menu-items > *[location]").forEach(function(node) {
 		node.onclick = function() {
-			if (!node.classList.contains("selected")) {
-				window.location.hash = node.getAttribute("location");;
-			}
+			window.location.hash = node.getAttribute("location");
 		}
 	});
 
@@ -50,7 +49,7 @@
 	/*
 	 *	Takes a parent node, unselects all the children, then selects the given child
 	 */
-	function toggleSelected(parent, node) {
+	function _toggleSelected(parent, node) {
 		Array.prototype.forEach.call(parent.children, function(node) {
 			node.classList.remove("selected");
 		});

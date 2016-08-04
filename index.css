@@ -1,6 +1,8 @@
 html, body {
 	margin: 0;
+	width: 100%;
 	height: 100%;
+	overflow: auto;
 }
 
 body {
@@ -8,7 +10,13 @@ body {
 	min-height: 400px;
 	-webkit-user-select: none;
 	
+	background-color: rgb(250, 250, 250);
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+a, a:hover, a:active, a:focus, a:visited {
+	color: black;
+	text-decoration: none;
 }
 
 
@@ -25,45 +33,13 @@ body {
 	transition: all 1s;
 }
 
-.body-content .section-content {
-	display: flex;
-	flex-direction: column;
-}
-
-.body-content:not(.expanded) .section-content {
-	height: 0;
-	overflow: hidden;
-}
-
-.body-content.expanded .section-content {
-	height: inherit;
-	overflow: visible;
-}
-
-.body-content:not(.expanded) .vcard,
-.body-content.expanded .section-content {
-	flex-grow: 1;
-}
-
-.body-content:not(.expanded) .section-content,
-.body-content.expanded .vcard {
-	flex-grow: 0;
-}
-
-.body-content .section-content > *.selected {
-	flex-grow: 1;
-}
-
-.body-content .section-content > *:not(.selected) {
-	flex-grow: 0;
-}
-
 
 
 /**************************************************************
 							VCard
 **************************************************************/
 .vcard {
+	flex: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -73,7 +49,7 @@ body {
 	background: radial-gradient(rgba(247, 233, 252, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-.vcard .vcard-portrait {
+.vcard-portrait {
 	width: 150px;
 	height: 150px;
 	border-radius: 150px 150px;
@@ -121,10 +97,77 @@ body {
 /**************************************************************
 						  About Me
 **************************************************************/
-.about-me {
-	background-color:red;
+.body-content .section-content {
+	display: flex;
+	flex-direction: column;
 }
 
+.body-content:not(.expanded) .section-content {
+	height: 0;
+	overflow: hidden;
+}
+
+.body-content.expanded .section-content {
+	height: inherit;
+	overflow: visible;
+}
+
+.body-content.expanded .section-content {
+	flex: 2;
+}
+
+.body-content:not(.expanded) .section-content {
+	flex: 0;
+}
+
+.body-content .section-content > * {
+	text-align: center;
+	transition: all 1s;
+}
+
+.body-content .section-content > *.selected {
+	flex-grow: 1;
+	height: inherit;
+	overflow: visible;
+	padding: 10px;
+}
+
+.body-content .section-content > *:not(.selected) {
+	flex-grow: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.body-content .section-content > hr {
+	border: 2px rgb(200, 200, 200) solid;
+	border-radius: 2px;
+	transition-duration: 2s;
+}
+
+.body-content.expanded .section-content > hr {
+	width: 80%;
+	min-width: 200px;
+}
+
+.body-content:not(.expanded) .section-content > hr {
+	width: 0;
+}
+
+
+
+/**************************************************************
+							Blog
+**************************************************************/
+.body-content .section-content > *[content="#blog"] {
+	display: flex;
+}
+
+.body-content .section-content > *[content="#blog"] > * {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin: 0 5px;
+}
 
 
 
@@ -168,14 +211,14 @@ body {
 	display: none;
 }
 
-.menu > div > span {
+.menu > div > * {
 	padding: 10px 10px 10px 35px;
 	white-space: nowrap;
 	cursor: pointer;
 }
 
-.menu .my-content,
-.menu .my-profiles {
+.menu .menu-items,
+.menu .external-links {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -183,24 +226,32 @@ body {
 	overflow: hidden;
 }
 
-.menu .my-content {
+.menu .menu-items {
 	min-height: 175px;
 	font-size: 19px;
 	
 	color: #262626;
 }
 
-.menu .my-profiles {
+.menu .external-links {
 	min-height: 75px;
 	font-size: 17px;
-	
+}
+
+.menu .external-links > a,
+.menu .external-links > a:hover,
+.menu .external-links > a:active,
+.menu .external-links > a:focus,
+.menu .external-links > a:visited {
 	color: #919191;
 }
 
-.menu .my-content .selected {
+.menu .menu-items .selected {
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 	font-weight: bold;
 	
-	background-color: #ffffff;
+	background-color: rgb(250, 250, 250);
 }
+
+
