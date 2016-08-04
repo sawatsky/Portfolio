@@ -14,10 +14,15 @@ body {
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
-a, a:hover, a:active, a:focus, a:visited {
+a,
+a:hover,
+a:active,
+a:focus,
+a:visited {
 	color: black;
 	text-decoration: none;
 }
+
 
 
 /**************************************************************
@@ -38,18 +43,18 @@ a, a:hover, a:active, a:focus, a:visited {
 /**************************************************************
 							VCard
 **************************************************************/
-.vcard {
+.body-content .vcard {
 	flex: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.vcard:hover {
+.body-content .vcard:hover {
 	background: radial-gradient(rgba(247, 233, 252, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-.vcard-portrait {
+.body-content .vcard .vcard-portrait {
 	width: 150px;
 	height: 150px;
 	border-radius: 150px 150px;
@@ -59,34 +64,34 @@ a, a:hover, a:active, a:focus, a:visited {
 	border: solid #262626 1px;
 }
 
-.vcard > div {
+.body-content .vcard > div {
 	display: flex;
 	flex-direction: column;
 	cursor: default;
 }
 
-.vcard > div > span {
+.body-content .vcard > div > * {
 	margin: 5px 0;
 	letter-spacing: 1.5px;
 }
 
-.vcard .vcard-name {
+.body-content .vcard .vcard-name {
 	font-size: 26px;
 	font-weight: bold;
 	color: #262626;
 }
 
-.vcard .vcard-profession {
+.body-content .vcard .vcard-profession {
 	font-size: 20px;
 	color: #919191;
 }
 
-.vcard .vcard-email {
+.body-content .vcard .vcard-email {
 	font-size: 20px;
 	color: #9c00cc;
 }
 
-.vcard .vcard-phone {
+.body-content .vcard .vcard-phone {
 	font-size: 18px;
 	color: #9c00cc;
 	letter-spacing: 0.5px;
@@ -95,7 +100,7 @@ a, a:hover, a:active, a:focus, a:visited {
 
 
 /**************************************************************
-						  About Me
+						Section Content
 **************************************************************/
 .body-content .section-content {
 	display: flex;
@@ -103,21 +108,15 @@ a, a:hover, a:active, a:focus, a:visited {
 }
 
 .body-content:not(.expanded) .section-content {
+	flex: 0;
 	height: 0;
 	overflow: hidden;
 }
 
 .body-content.expanded .section-content {
+	flex: 2;
 	height: inherit;
 	overflow: visible;
-}
-
-.body-content.expanded .section-content {
-	flex: 2;
-}
-
-.body-content:not(.expanded) .section-content {
-	flex: 0;
 }
 
 .body-content .section-content > * {
@@ -136,6 +135,7 @@ a, a:hover, a:active, a:focus, a:visited {
 	flex-grow: 0;
 	height: 0;
 	overflow: hidden;
+	padding: 0;
 }
 
 .body-content .section-content > hr {
@@ -156,13 +156,19 @@ a, a:hover, a:active, a:focus, a:visited {
 
 
 /**************************************************************
+						  About Me
+**************************************************************/
+
+
+
+/**************************************************************
 							Blog
 **************************************************************/
-.body-content .section-content > *[content="#blog"] {
+.body-content .section-content > *[section="#blog"] {
 	display: flex;
 }
 
-.body-content .section-content > *[content="#blog"] > * {
+.body-content .section-content > *[section="#blog"] > * {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -171,9 +177,14 @@ a, a:hover, a:active, a:focus, a:visited {
 
 
 
+/**************************************************************
+							References
+**************************************************************/
+
+
 
 /**************************************************************
-							Menu
+						  Side Menu
 **************************************************************/
 .menu {
 	display: flex;
@@ -238,11 +249,11 @@ a, a:hover, a:active, a:focus, a:visited {
 	font-size: 17px;
 }
 
-.menu .external-links > a,
-.menu .external-links > a:hover,
-.menu .external-links > a:active,
-.menu .external-links > a:focus,
-.menu .external-links > a:visited {
+.menu a,
+.menu a:hover,
+.menu a:active,
+.menu a:focus,
+.menu a:visited {
 	color: #919191;
 }
 
@@ -253,5 +264,3 @@ a, a:hover, a:active, a:focus, a:visited {
 	
 	background-color: rgb(250, 250, 250);
 }
-
-

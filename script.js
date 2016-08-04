@@ -11,7 +11,7 @@
 			_toggleSelected(document.querySelector(".section-content"));
 		} else {
 			// 'Select' .section-content
-			var sectionContent = document.querySelector(".section-content > *[content='" + hash + "']");
+			var sectionContent = document.querySelector(".section-content > *[section='" + hash + "']");
 			_toggleSelected(sectionContent.parentNode, sectionContent);
 
 			document.querySelector(".body-content").classList.add("expanded");
@@ -37,7 +37,7 @@
 
 
 	/*
-	 *	On click of a menu item, change the location.hash or location.href
+	 *	On click of a menu item, change the location.hash
 	 */
 	document.querySelectorAll(".menu-items > *[location]").forEach(function(node) {
 		node.onclick = function() {
@@ -47,7 +47,7 @@
 
 
 	/*
-	 *	Takes a parent node, unselects all the children, then selects the given child
+	 *	Takes a parent node, unselects all the children, then selects the given child if given
 	 */
 	function _toggleSelected(parent, node) {
 		Array.prototype.forEach.call(parent.children, function(node) {
