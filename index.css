@@ -163,7 +163,6 @@ a:visited {
 .body-content .section-content > *.selected {
 	flex: 1;
 	height: inherit;
-	padding: 10px;
 }
 
 .body-content .section-content > *:not(.selected) {
