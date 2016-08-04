@@ -32,6 +32,7 @@
 	document.querySelectorAll(".menu-icon, .close-icon").forEach(function(node) {
 		node.onclick = function() {
 			document.querySelector("menu").classList.toggle("expanded");
+			document.querySelector(".body-content").classList.toggle("menu-open");
 		}
 	});
 

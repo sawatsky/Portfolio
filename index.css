@@ -36,7 +36,7 @@ a:visited {
 }
 
 .body-content > * {
-	transition: all 1s;
+	transition: all 0.5s;
 }
 
 .body-content.expanded > * {
@@ -55,7 +55,22 @@ a:visited {
 	justify-content: center;
 }
 
+@media (max-width: 768px) {
+	.body-content.menu-open vcard {
+		flex-direction: column;
+		padding-right: 250px;
+	}
+
+	.body-content.menu-open vcard vcard-info {
+		text-align: center;
+	}
+}
+
 @media (max-width: 550px) {
+	.body-content.menu-open vcard {
+		margin-left: auto;
+	}
+
 	.body-content vcard {
 		flex-direction: column;
 	}
@@ -234,6 +249,15 @@ menu {
 
 menu:not(.expanded) {
 	width: 0;
+}
+
+@media (max-width: 768px) {
+	menu {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
 }
 
 menu .menu-icon,
