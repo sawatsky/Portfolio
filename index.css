@@ -38,6 +38,10 @@ a:visited {
 	transition: all 1s;
 }
 
+.body-content.expanded > * {
+	transition-delay: 0.25s;
+}
+
 
 
 /**************************************************************
@@ -110,31 +114,33 @@ a:visited {
 .body-content:not(.expanded) .section-content {
 	flex: 0;
 	height: 0;
-	overflow: hidden;
 }
 
 .body-content.expanded .section-content {
 	flex: 2;
 	height: inherit;
-	overflow: visible;
 }
 
 .body-content .section-content > * {
 	text-align: center;
 	transition: all 1s;
+	overflow: hidden;
+	background-color:red;
+}
+
+.body-content:not(.expanded) .section-content > * {
+	transition-delay: 1s;
 }
 
 .body-content .section-content > *.selected {
-	flex-grow: 1;
+	flex: 1;
 	height: inherit;
-	overflow: visible;
 	padding: 10px;
 }
 
 .body-content .section-content > *:not(.selected) {
-	flex-grow: 0;
+	flex: 0;
 	height: 0;
-	overflow: hidden;
 	padding: 0;
 }
 
@@ -166,13 +172,34 @@ a:visited {
 **************************************************************/
 .body-content .section-content > *[section="#blog"] {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .body-content .section-content > *[section="#blog"] > * {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	margin: 0 5px;
+	min-width: 300px;
+}
+
+.body-content .section-content > *[section="#blog"] > *:not(:last-child) {
+	margin: 0 5px 50px 5px;
+}
+
+.body-content .section-content > *[section="#blog"] > * > .title {
+	font-size: 26px;
+	font-weight: bold;
+	color: #262626;
+}
+
+.body-content .section-content > *[section="#blog"] > * > .logo {
+	width: 100px;
+	height: auto;
+	margin: 0 auto;
+
+	border: 1px black solid;
+	border-radius: 50px;
+	background-color: black;
 }
 
 
