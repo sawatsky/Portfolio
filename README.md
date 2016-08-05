@@ -12,4 +12,8 @@
 	- Started to fill in page content
 	- Beginning to animate those content pages
 	- Animation changes to compensate for small screens
+
+<b>v0.0.3 - 2016 Aug 5</b>
+	- Fixing animations with page content
+	- New method for animating page content
 </pre>
