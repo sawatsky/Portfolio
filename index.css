@@ -155,12 +155,13 @@ a:visited {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	overflow: auto;
+	overflow: hidden;
 }
 
 .body-content.expanded .section-content > *.selected {
 	z-index: 2;
 	-webkit-animation: smoothslide 0.5s;
+	overflow: auto;
 }
 
 .body-content.expanded .section-content > *.last-selected {
