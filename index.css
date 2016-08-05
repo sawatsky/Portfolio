@@ -2,7 +2,6 @@ html, body {
 	margin: 0;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
 }
 
 body {
@@ -34,10 +33,18 @@ a:visited {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+
+	transition: max-width 0.25s;
 }
 
 .body-content > * {
-	transition: all 1s;
+	transition: flex-grow 1s;
+}
+
+@media (max-width: 768px) {
+	.body-content.menu-open {
+		max-width: calc(100% - 250px);
+	}
 }
 
 
@@ -59,7 +66,6 @@ a:visited {
 @media (max-width: 768px) {
 	.body-content.menu-open vcard {
 		flex-direction: column;
-		margin-right: 250px;
 	}
 
 	.body-content.menu-open vcard vcard-info {
@@ -67,17 +73,17 @@ a:visited {
 	}
 }
 
-@media (max-width: 550px) {
-	.body-content.menu-open vcard {
-		margin-left: auto;
-	}
-
+@media (max-width: 525px) {
 	.body-content vcard {
 		flex-direction: column;
 	}
 
 	.body-content vcard vcard-info {
 		text-align: center;
+	}
+
+	.body-content.menu-open {
+		max-width: 100%;
 	}
 }
 
@@ -119,7 +125,7 @@ a:visited {
 }
 
 .body-content vcard vcard-email {
-	font-size: 20px;
+	font-size: 16px;
 	color: #9c00cc;
 }
 
@@ -149,6 +155,7 @@ a:visited {
 	height: 100%;
 	width: 100%;
 	position: absolute;
+	overflow: auto;
 }
 
 .body-content.expanded .section-content > *.selected {
@@ -161,7 +168,7 @@ a:visited {
 }
 
 .body-content:not(.expanded) .section-content > * {
-	z-index: 1;
+	z-index: 0;
 
 	transition: z-index 0s ease 1s;
 }
@@ -276,6 +283,7 @@ menu:not(.expanded) {
 		top: 0;
 		bottom: 0;
 		right: 0;
+		z-index: 5;
 	}
 }
 
@@ -286,6 +294,7 @@ menu .close-icon {
 	width: 32px;
 	padding: 10px;
 	margin: 5px 10px;
+	z-index: 5;
 	cursor: pointer;
 }
 
