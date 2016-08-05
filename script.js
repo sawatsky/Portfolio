@@ -1,4 +1,8 @@
 (function(window, document, undefined) {
+	var _bodyContent = document.querySelector(".body-content"),
+		_sectionContent = document.querySelector(".body-content .section-content"),
+		_menu = document.querySelector("menu");
+
 	/*
 	 *	On location.hash change, modify the display of the page
 	 */
@@ -7,25 +11,23 @@
 
 		// 'Expand' .body-content
 		if (hash == "#") {
-			document.querySelector(".body-content").classList.remove("expanded");
-			_toggleClass(document.querySelector(".section-content"), null, "selected");
-			_toggleClass(document.querySelector(".section-content"), null, "last-selected");
+			_bodyContent.classList.remove("expanded");
 		} else {
 			// 'Last Select' .section-content
-			var lastSelected = document.querySelector(".section-content > *.selected");
+			var lastSelected = _sectionContent.querySelector("*.selected");
 			if (lastSelected) {
 				_toggleClass(lastSelected.parentNode, lastSelected, "last-selected");
 			}
 			
 			// 'Select' .section-content
-			var sectionContent = document.querySelector(".section-content > *[section='" + hash + "']");
+			var sectionContent = _sectionContent.querySelector("*[section='" + hash + "']");
 			_toggleClass(sectionContent.parentNode, sectionContent, "selected");
 
-			document.querySelector(".body-content").classList.add("expanded");
+			_bodyContent.classList.add("expanded");
 		}
 
 		// 'Select' menu item
-		var menuItem = document.querySelector("menu-items > *[location='" + hash +"']");
+		var menuItem = _menu.querySelector("menu-items > *[location='" + hash +"']");
 		_toggleClass(menuItem.parentNode, menuItem, "selected");
 
 		return onhashchange;
@@ -36,10 +38,10 @@
 	 *	On click of the .menu-icon or .close-icon, toggle menu 'expanded'
 	 *	Since, on page load/refresh, the menu is always 'not expanded', toggle will start toggling from the correct state
 	 */
-	document.querySelectorAll(".menu-icon, .close-icon").forEach(function(node) {
+	_menu.querySelectorAll(".menu-icon, .close-icon").forEach(function(node) {
 		node.onclick = function() {
-			document.querySelector("menu").classList.toggle("expanded");
-			document.querySelector(".body-content").classList.toggle("menu-open");
+			_menu.classList.toggle("expanded");
+			_bodyContent.classList.toggle("menu-open");
 		}
 	});
 
@@ -47,7 +49,7 @@
 	/*
 	 *	On click of a menu item, change the location.hash
 	 */
-	document.querySelectorAll("menu-items > *[location]").forEach(function(node) {
+	_menu.querySelectorAll("menu-items > *[location]").forEach(function(node) {
 		node.onclick = function() {
 			window.location.hash = node.getAttribute("location");
 		}
