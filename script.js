@@ -8,18 +8,25 @@
 		// 'Expand' .body-content
 		if (hash == "#") {
 			document.querySelector(".body-content").classList.remove("expanded");
-			_toggleSelected(document.querySelector(".section-content"));
+			_toggleClass(document.querySelector(".section-content"), null, "selected");
+			_toggleClass(document.querySelector(".section-content"), null, "last-selected");
 		} else {
+			// 'Last Select' .section-content
+			var lastSelected = document.querySelector(".section-content > *.selected");
+			if (lastSelected) {
+				_toggleClass(lastSelected.parentNode, lastSelected, "last-selected");
+			}
+			
 			// 'Select' .section-content
 			var sectionContent = document.querySelector(".section-content > *[section='" + hash + "']");
-			_toggleSelected(sectionContent.parentNode, sectionContent);
+			_toggleClass(sectionContent.parentNode, sectionContent, "selected");
 
 			document.querySelector(".body-content").classList.add("expanded");
 		}
 
 		// 'Select' menu item
 		var menuItem = document.querySelector("menu-items > *[location='" + hash +"']");
-		_toggleSelected(menuItem.parentNode, menuItem);
+		_toggleClass(menuItem.parentNode, menuItem, "selected");
 
 		return onhashchange;
 	})();
@@ -50,13 +57,13 @@
 	/*
 	 *	Takes a parent node, unselects all the children, then selects the given child if given
 	 */
-	function _toggleSelected(parent, node) {
+	function _toggleClass(parent, node, cls) {
 		Array.prototype.forEach.call(parent.children, function(node) {
-			node.classList.remove("selected");
+			node.classList.remove(cls);
 		});
 
 		if (node) {
-			node.classList.add("selected");
+			node.classList.add(cls);
 		}
 	}
 })(window, document);
