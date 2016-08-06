@@ -16,4 +16,8 @@
 <b>v0.0.3 - 2016 Aug 5</b>
 	- Fixing animations with page content
 	- New method for animating page content
+	- Fixing whole site animations since new method of animating page content
+	- Started working on Blog page content
+
+<b>v0.0.4 - 2016 Aug 6</b>
 </pre>
