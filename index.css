@@ -38,7 +38,7 @@ a:visited {
 }
 
 .body-content > * {
-	transition: flex-grow 1s;
+	transition: flex-grow 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -161,7 +161,7 @@ a:visited {
 .body-content.expanded .section-content > *.selected {
 	z-index: 2;
 	-webkit-animation: smoothslide 0.5s;
-	overflow: auto;
+	-webkit-animation-fill-mode: forwards;
 }
 
 .body-content.expanded .section-content > *.last-selected {
@@ -171,13 +171,16 @@ a:visited {
 .body-content:not(.expanded) .section-content > * {
 	z-index: 0;
 
-	transition: z-index 0s ease 1s;
+	transition: z-index 0s ease 0.5s;
 }
 
 @-webkit-keyframes smoothslide {
 	0%		{top: 100%;}
-	100%	{top: 0;}
+	95%		{overflow: hidden;}
+	100%	{top: 0; overflow: auto;}
 }
+
+
 
 
 
@@ -227,21 +230,24 @@ a:visited {
 .body-content .section-content > *[section="#blog"] > * {
 	flex: 1;
 	display: flex;
+	flex-wrap: wrap;
+}
+
+.body-content .section-content > *[section="#blog"] > * > * {
+	flex: 1;
+	display: flex;
 	flex-direction: column;
+
 	min-width: 300px;
 }
 
-.body-content .section-content > *[section="#blog"] > *:not(:last-child) {
-	margin: 0 5px 50px 5px;
-}
-
-.body-content .section-content > *[section="#blog"] > * > .title {
+.body-content .section-content > *[section="#blog"] .title {
 	font-size: 26px;
 	font-weight: bold;
 	color: #262626;
 }
 
-.body-content .section-content > *[section="#blog"] > * > .logo {
+.body-content .section-content > *[section="#blog"] .logo {
 	width: 100px;
 	height: auto;
 	margin: 0 auto;
