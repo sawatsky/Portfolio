@@ -153,8 +153,8 @@ a:visited {
 
 .body-content .section-content > * {
 	height: 100%;
-	width: 100%;
 	position: absolute;
+	padding: 15px;
 	overflow: hidden;
 }
 
