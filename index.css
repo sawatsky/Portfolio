@@ -38,7 +38,7 @@ a:visited {
 }
 
 .body-content > * {
-	transition: flex-grow 0.5s;
+	transition: flex-grow 0.5s, height 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -57,6 +57,7 @@ a:visited {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 100%;
 }
 
 .body-content.expanded vcard {
@@ -89,7 +90,8 @@ a:visited {
 
 @media (max-height: 500px) {
 	.body-content.expanded vcard {
-		flex: 0;
+		flex-grow: unset;
+		height: 0;
 	}
 }
 
