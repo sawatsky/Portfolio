@@ -19,5 +19,6 @@
 	- Fixing whole site animations since new method of animating page content
 	- Started working on Blog page content
 
-<b>v0.0.4 - 2016 Aug 6</b>
+<b>v0.0.4 - 2016 Aug 8</b>
+	- Blog content structure redesign
 </pre>
