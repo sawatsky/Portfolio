@@ -12,6 +12,8 @@
 		// 'Expand' .body-content
 		if (hash == "#") {
 			_bodyContent.classList.remove("expanded");
+			_toggleClass(_sectionContent, null, "selected");
+			_toggleClass(_sectionContent, null, "last-selected");
 		} else {
 			// 'Last Select' .section-content
 			var lastSelected = _sectionContent.querySelector("*.selected");
@@ -20,8 +22,8 @@
 			}
 			
 			// 'Select' .section-content
-			var sectionContent = _sectionContent.querySelector("*[section='" + hash + "']");
-			_toggleClass(sectionContent.parentNode, sectionContent, "selected");
+			var selection = _sectionContent.querySelector("*[section='" + hash + "']");
+			_toggleClass(selection.parentNode, selection, "selected");
 
 			_bodyContent.classList.add("expanded");
 		}

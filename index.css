@@ -153,9 +153,16 @@ a:visited {
 
 .body-content .section-content > * {
 	height: 100%;
-	position: absolute;
 	padding: 15px;
-	overflow: hidden;
+	position: absolute;
+	right: 0;
+	left: 0;
+}
+
+.body-content.expanded .section-content > *:not(.selected) {
+	visibility: hidden;
+	
+	transition: visbility 0s ease 0.5s;
 }
 
 .body-content.expanded .section-content > *.selected {
@@ -166,6 +173,7 @@ a:visited {
 
 .body-content.expanded .section-content > *.last-selected {
 	z-index: 1;
+	visibility: visible;
 }
 
 .body-content:not(.expanded) .section-content > * {
@@ -176,10 +184,9 @@ a:visited {
 
 @-webkit-keyframes smoothslide {
 	0%		{top: 100%;}
-	95%		{overflow: hidden;}
-	100%	{top: 0; overflow: auto;}
+	95%		{overflow: hidden; visibilty: hidden;}
+	100%	{top: 0; overflow: auto; visibility: visible;}
 }
-
 
 
 
