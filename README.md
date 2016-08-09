@@ -1,9 +1,9 @@
 # Portfolio
-
-## ChangeLog
 <p align="center">
 	<img src="images/Website-V.1.JPG"/>
 </p>
+
+## ChangeLog
 <pre>
 <b>v0.0.1 - 2016 May 20-23</b>
 	- Initial commit of basic layout of content
