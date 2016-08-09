@@ -83,18 +83,21 @@ div {
 	letter-spacing: 1.5px;
 }
 
-.body-content .image-info-layout .title {
+.body-content .image-info-layout .title,
+.body-content .section-content *[section] .title {
 	font-size: 26px;
 	font-weight: bold;
 	color: #262626;
 }
 
-.body-content .image-info-layout .subtitle {
+.body-content .image-info-layout .subtitle,
+.body-content .section-content *[section] .content {
 	font-size: 20px;
 	color: #919191;
 }
 
-.body-content .image-info-layout .extra {
+.body-content .image-info-layout .extra,
+.body-content .read-more {
 	font-size: 16px;
 	color: #9c00cc;
 }
@@ -236,9 +239,20 @@ div {
 /**************************************************************
 						  About Me
 **************************************************************/
-.body-content .section-content *[section="#about-me"] {
-	
+.body-content .section-content *[section="#about-me"] .title {
+	font-size: 1.6rem;
 }
+
+.body-content .section-content *[section="#about-me"] .content {
+	font-size: 1rem;
+}
+
+.body-content .section-content *[section="#about-me"] p {
+	line-height: 1.9;
+	margin: 0.5rem 0 1rem 0;
+}
+
+
 
 
 /**************************************************************
@@ -260,16 +274,24 @@ div {
 	height: 100px;
 }
 
-.body-content .section-content *[section="#blog"] .extra {
-	align-self: flex-end;
-}
-
 
 
 
 /**************************************************************
 							References
 **************************************************************/
+
+
+
+/**************************************************************
+							General
+**************************************************************/
+.body-content .read-more {
+	float: right;
+	align-self: flex-end;
+
+	cursor: pointer;
+}
 
 
 
@@ -364,4 +386,17 @@ menu menu-items .selected {
 	font-weight: bold;
 	
 	background-color: rgb(250, 250, 250);
+}
+
+
+
+/**************************************************************
+						  	   General
+**************************************************************/
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
 }

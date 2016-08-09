@@ -21,4 +21,8 @@
 
 <b>v0.0.4 - 2016 Aug 8</b>
 	- Blog content structure redesign
+
+<b>v0.0.5 - 2016 Aug 9</b>
+	- About Me content written
+	- References changed to Portfolio
 </pre>
