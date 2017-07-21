@@ -37,10 +37,10 @@
 
 
 	/*
-	 *	On click of the .menu-icon or .close-icon, toggle menu 'expanded'
+	 *	On click of the menu-icon, toggle menu 'expanded'
 	 *	Since, on page load/refresh, the menu is always 'not expanded', toggle will start toggling from the correct state
 	 */
-	_menu.querySelectorAll(".menu-icon, .close-icon").forEach(function(node) {
+	_menu.querySelectorAll("menu-icon").forEach(function(node) {
 		node.onclick = function() {
 			_menu.classList.toggle("expanded");
 			_bodyContent.classList.toggle("menu-open");
@@ -62,11 +62,13 @@
 	 *	Takes a parent node, unselects all the children, then selects the given child if given
 	 */
 	function _toggleClass(parent, node, cls) {
-		Array.prototype.forEach.call(parent.children, function(node) {
-			node.classList.remove(cls);
-		});
+		if (parent instanceof Element) {
+			Array.prototype.forEach.call(parent.children, function(node) {
+				node.classList.remove(cls);
+			});
+		}
 
-		if (node) {
+		if (node instanceof Element) {
 			node.classList.add(cls);
 		}
 	}
