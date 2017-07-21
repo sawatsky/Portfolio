@@ -25,7 +25,6 @@ a:visited {
 
 div {
 	min-width: 0;
-	box-sizing: border-box;
 }
 
 
@@ -37,126 +36,87 @@ div {
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
-
-	transition: max-width 0.25s;
-}
-
-.body-content > * {
-	transition: flex-grow 0.5s;
-}
-
-@media (max-width: 768px) {
-	.body-content.menu-open {
-		max-width: calc(100% - 250px);
-	}
-}
-
-
-
-/**************************************************************
-					  Image-Info Layout
-**************************************************************/
-.body-content .image-info-layout {
-	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
-
-.body-content .image-info-layout .image {
-	max-width: 150px;
-	max-height: 150px;
-	border-radius: 150px;
-	margin: 10px 25px 10px 10px;
-}
-
-.body-content .image-info-layout .info {
-	display: flex;
-	flex-direction: column;
-	cursor: default;
-
-	
-}
-
-.body-content .image-info-layout .info > * {
-	margin: 5px 0;
-	letter-spacing: 1.5px;
-}
-
-.body-content .image-info-layout .title,
-.body-content .section-content *[section] .title {
-	font-size: 26px;
-	font-weight: bold;
-	color: #262626;
-}
-
-.body-content .image-info-layout .subtitle,
-.body-content .section-content *[section] .content {
-	font-size: 20px;
-	color: #919191;
-}
-
-.body-content .image-info-layout .extra,
-.body-content .read-more {
-	font-size: 16px;
-	color: #9c00cc;
-}
-
 
 
 
 /**************************************************************
 							VCard
 **************************************************************/
-.body-content vcard {
-	flex-grow: 1;
-	height: 175px;
-	z-index: 4;
+vcard {
+	display: inline-block;
+	padding: 10px;
 }
 
-.body-content.expanded vcard {
-	flex-grow: unset;
-	height: initial;
+vcard > * {
+	vertical-align: middle;
 }
 
-@media (max-width: 768px) {
-	.body-content.menu-open vcard {
-		flex-direction: column;
-	}
-
-	.body-content.menu-open vcard vcard-info {
-		text-align: center;
-	}
-}
-
-@media (max-width: 525px) {
-	.body-content vcard {
-		flex-direction: column;
-	}
-
-	.body-content vcard vcard-info {
-		text-align: center;
-	}
-
-	.body-content.menu-open {
-		max-width: 100%;
-	}
-}
-
-@media (max-height: 500px) {
-	.body-content.expanded vcard {
-		flex-grow: unset;
-		height: 0;
-	}
-}
-
-.body-content vcard > img {
+vcard > img {
+	box-sizing: border-box;
+	height: 155px;
+	margin-right: 15px;
+	border-radius: 175px;
 	border: solid #262626 1px;
 }
 
-.body-content vcard vcard-phone {
+vcard vcard-info {
+	display: inline-block;
+}
+
+vcard vcard-info > * {
+	display: block;
+	margin: 5px 0;
+	cursor: default;
+}
+vcard vcard-info > vcard-name,
+vcard vcard-info > vcard-profession,
+vcard vcard-info > vcard-email {
+	letter-spacing: 1.5px;
+}
+
+vcard vcard-info > vcard-name {
+	font-size: 26px;
+	font-weight: bold;
+	color: #262626;
+}
+
+vcard vcard-info > vcard-profession {
+	font-size: 20px;
+	color: #919191;
+}
+
+vcard  vcard-info > vcard-email,
+vcard vcard-info > vcard-phone {
+	color: #9c00cc;
+}
+
+vcard  vcard-info > vcard-email {
+	font-size: 16px;
+}
+
+vcard vcard-info > vcard-phone {
 	font-size: 18px;
 	letter-spacing: 0.5px;
+}
+
+@media (max-width: 472px) {
+	.body-content {
+		justify-content: flex-start;
+	}
+	
+	vcard {
+		text-align: center;
+	}
+}
+
+@media (max-width: 722px) {
+	.menu-open vcard {
+		text-align: center;
+	}
 }
 
 
@@ -171,6 +131,7 @@ div {
 
 .body-content.expanded .section-content {
 	flex-grow: 1;
+	width: 100%;
 }
 
 .body-content .section-content > * {
@@ -234,6 +195,21 @@ div {
 	width: 0;
 }
 
+.body-content .section-content *[section] .title {
+	font-size: 26px;
+	font-weight: bold;
+	color: #262626;
+}
+
+.body-content .section-content *[section] .content {
+	font-size: 20px;
+	color: #919191;
+}
+
+.body-content .read-more {
+	font-size: 16px;
+	color: #9c00cc;
+}
 
 
 /**************************************************************
@@ -296,6 +272,101 @@ div {
 
 
 /**************************************************************
+						  	Menu Icon
+**************************************************************/
+menu-icon {
+  width: 50px;
+  margin: 5px 10px;
+  padding: 10px;
+  position: absolute;
+  left: -90px;
+  font-size: 0;
+  cursor: pointer;
+}
+
+menu-icon > span {
+  display: inline-block;
+  background-color: black;
+  width: 50%;
+  height: 8px;
+  position: relative;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+menu-icon > span:nth-child(odd) {
+  border-radius: 8px 0 0 8px;
+}
+
+menu-icon > span:nth-child(even) {
+  border-radius: 0 8px 8px 0;
+}
+
+menu-icon > span:nth-child(3),
+menu-icon > span:nth-child(4),
+menu-icon > span:nth-child(5),
+menu-icon > span:nth-child(6) {
+  margin-top: 8px;
+}
+
+menu.expanded menu-icon > span:nth-child(1),
+menu.expanded menu-icon > span:nth-child(6) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+menu.expanded menu-icon > span:nth-child(2),
+menu.expanded menu-icon > span:nth-child(5) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+menu.expanded menu-icon > span:nth-child(1) {
+  left: 4px;
+  top: 8px;
+}
+
+menu.expanded menu-icon > span:nth-child(2) {
+  left: -4px;
+  top: 8px;
+}
+
+menu.expanded menu-icon > span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+}
+
+menu.expanded menu-icon > span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+}
+
+menu.expanded menu-icon > span:nth-child(5) {
+  left: 4px;
+  top: -8px;
+}
+
+menu.expanded menu-icon > span:nth-child(6) {
+  left: -4px;
+  top: -8px;
+}
+
+
+/**************************************************************
 						  	   Menu
 **************************************************************/
 menu {
@@ -314,38 +385,8 @@ menu:not(.expanded) {
 	width: 0;
 }
 
-@media (max-width: 768px) {
-	menu {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		z-index: 5;
-	}
-}
-
-menu .menu-icon,
-menu .close-icon {
-	position: absolute;
-	left: -72px;
-	width: 32px;
-	padding: 10px;
-	margin: 5px 10px;
-	z-index: 5;
-	cursor: pointer;
-}
-
-menu:not(.expanded) .menu-icon,
-menu.expanded .close-icon {
-	display: block;
-}
-
-menu.expanded .menu-icon,
-menu:not(.expanded) .close-icon {
-	display: none;
-}
-
-menu > * > * {
+menu > menu-items > *,
+menu > external-links > * {
 	padding: 10px 10px 10px 35px;
 	white-space: nowrap;
 	cursor: pointer;
