@@ -1,0 +1,7 @@
+.contact-form {
+    display: inline-block;
+}
+
+.contact-form .contact-form-message-wrapper .contact-form-message {
+    resize: none;
+}

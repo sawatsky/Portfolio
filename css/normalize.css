@@ -1,0 +1,97 @@
+html, body {
+	margin: 0;
+}
+
+html {
+    line-height: 1.15; /* Normalize line-height across all browsers */
+    -ms-text-size-adjust: 100%; /* Prevent font-size changes after orientation changes on phones */
+    -webkit-text-size-adjust: 100%; /* Prevent font-size changes after orientation changes on phones */
+}
+
+div {
+	min-width: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block; /* Correct display format for IE 9+ */
+}
+
+a,
+a:hover,
+a:active,
+a:focus,
+a:visited {
+    background-color: transparent; /* Remove gray background in IE 10 */
+    -webkit-text-decoration-skip: objects; /* Remove gaps under link underline in iOS and Safari */
+}
+
+h1 {
+    font-size: 2em; /* Correct font size in Chrome, Firefox, and Safari */
+    margin: 0.67em 0; /* Correct margin in Chrome Firefox and Safari */
+}
+
+hr {
+    box-sizing: content-box; /* Correct box-sizing in Firefox */
+    height: 0; /* Correct height due to box-sizing in Firefox */
+    overflow: visible; /* Show overflow in Edge and IE */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-size: 100%; /* Normalize font sizes across browsers */
+    line-height: 1.15; /* Normalize line heights across browsers */
+    margin: 0; /* For Firefox and Safari */
+}
+
+button,
+input {
+    overflow: visible; /* Show overflow in IE and Edge */
+}
+
+button,
+select {
+    text-transform: none; /* Remove text transform inheritance in Edge, Firefox, and IE */
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button; /* Correct inability to style clickables in iOS and Safari */
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none; /* Remove inner border in Firefox */
+    padding: 0; /* Remove padding in Firefox */
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText; /* Restore focus styles unset be previous rule */
+}
+
+
+textarea {
+    overflow: auto; /* Remove default scrollbar in IE */
+}
+
+img {
+    border-style: none; /* Remove border on images inside links in IE 10+ */
+}
+
+[hidden] {
+    display: none; /* Add correct display in IE 10+ */
+}

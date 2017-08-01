@@ -1,0 +1,42 @@
+.site-navigation {
+    width: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    background-color: #3B4D5E;
+    border-bottom: 10px solid #FAB23E;
+    font-size: 0;
+}
+
+.site-navigation > a {
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.site-navigation > a:not(.navigation-home) {
+    padding: 30px;
+    font-size: 18px;
+    color: #F2F4F5;
+}
+
+.site-navigation > a:not(.navigation-home):hover {
+    color: #FAB23E;
+}
+
+.site-navigation > .navigation-home {
+    width: 120px;
+    position: relative;
+    vertical-align: top;
+}
+
+.site-navigation > .navigation-home > img {
+    max-width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 120px;
+    border: 5px solid #FAB23E;
+}

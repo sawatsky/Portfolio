@@ -1,0 +1,31 @@
+/*
+ *  Hide all elements without 'content' attribute
+ *  Protect against users manually erasing 'content' attribute
+ */
+.main-content > :not([content]) {
+    display: none;
+}
+
+/* Hide all elements without the selected class */
+.main-content > [content]:not(.selected) {
+    display: none;
+}
+
+/* Show all elements with the selected class */
+.main-content > [content].selected {
+    display: inherit;
+    height: 100%;
+}
+
+/*
+ *  Hide all elements after the first element with the selected attribute
+ *  This ensures that even if a user manually comes in and adds another 'selected' class,
+ *      that only the first 'selected' element will be displayed
+ */
+.main-content > [content].selected ~ [content] {
+    display: none
+}
+
+.main-content > [content="#contact-me"] .vcard-header {
+    display: block;
+}

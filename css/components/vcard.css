@@ -1,0 +1,67 @@
+/*
+ * Standard business cards have a 3.5:2 width:height ratio
+ */
+.vcard {
+    display: inline-block;
+    width: 500px;
+    z-index: 0;
+}
+
+.vcard-front,
+.vcard-back {
+    height: 285px;
+}
+
+.vcard-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    -ms-transform: rotate(-3deg); /* IE 9 */
+    -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+    transform: rotate(-3deg);
+    background-color: black;
+    color: white;
+}
+
+.vcard-front .vcard-name,
+.vcard-front .vcard-profession {
+    display: block;
+}
+
+.vcard-front .vcard-name {
+    font-size: 30px;
+}
+
+.vcard-back {
+    box-sizing: border-box;
+    padding: 35px;
+    position: relative;
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+    text-align: right;
+    background-color: black;
+    color: white;
+}
+
+.vcard-back .vcard-info {
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    border-left: 5px solid white;
+}
+
+.vcard-back .vcard-info .vcard-name,
+.vcard-back .vcard-info .vcard-profession,
+.vcard-back .vcard-info .vcard-phone,
+.vcard-back .vcard-info .vcard-location {
+    display: block;
+}
+
+.vcard-back .vcard-external-info {
+    position: absolute;
+    left: 35px;
+    bottom: 35px;
+}

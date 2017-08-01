@@ -1,0 +1,40 @@
+.experience {
+    margin: 20px 0px 40px 0px;
+}
+
+.experience .title {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+}
+
+.experience .project {
+    float: left;
+    font-size: 20px;
+}
+
+.experience .year {
+    float: right;
+    font-size: 14px;
+}
+
+.experience .project-description {
+    
+}
+
+.experience .my-role {
+    margin: 20px 30px 10px 30px;
+}
+
+.experience .demo {
+    margin: 0 30px;
+    padding: 10px;
+    background-color: #3B4D5E;
+    border: 1px solid black;
+}
+
+.experience .demo img {
+    width: 200px;
+}
