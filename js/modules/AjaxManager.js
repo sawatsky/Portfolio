@@ -44,14 +44,14 @@
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4) {
                         if (this.status = 200) {
-                            resolve();
+                            resolve(this.responseText);
                         } else {
-                            reject(this.status);
+                            reject({ status: this.status, response: this.responseText });
                         }
                     }
                 };
-                xhr.open("POST", "/php/error.php", true);
-                xhr.send(data);
+                xhr.open("GET", "http://localhost:8080/blogs", true);
+                xhr.send();
             });
         },
         getBlog: function(id) {

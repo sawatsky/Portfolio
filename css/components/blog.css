@@ -29,7 +29,6 @@
     position: absolute;
     top: -2px;
     left: -2px;
-    z-index: 1;
     box-shadow: -3px -3px 3px -1px rgba(0, 0, 0, 0.5);
 }
 
